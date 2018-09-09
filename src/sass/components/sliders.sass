@@ -1,0 +1,63 @@
+.slider
+   display: none
+   &.slick-initialized
+      display: block
+      
+.slider-btn
+   position: absolute
+   top: 50%
+   z-index: 1
+   display: flex
+   align-items: center
+   justify-content: center
+   width: 40px
+   height: 105px
+   margin-top: -52px
+   transition: .3s ease-in-out
+   &:hover
+   &.slick-disabled
+      pointer-events: none
+      opacity: .5
+   &_prev
+   &_next
+      svg
+         transform: scaleX(-1)
+   svg
+      fill: $white
+      width: 40px
+      height: 105px
+      
+.slider-dots
+   +flexCenter
+   li
+      &.slick-active
+         button
+            background-color: #e24b2e
+            &::after
+               transform: scale(1)
+               content: ''
+      &:not(:last-child)
+         margin-right: 20px
+      button
+         position: relative
+         width: 24px
+         height: 24px
+         border-radius: 50%
+         background-color: #ffffff
+         transition: .3s ease-in-out
+         +hide-text
+         &::after
+            position: absolute
+            top: -5px
+            left: -5px
+            right: -5px
+            bottom: -5px
+            transform: scale(0)
+            transition: .5s ease-in-out
+            background-color: #fe7b3c
+            border-radius: 50%
+            z-index: -1
+            content: ''
+         
+.slick-slide
+   +gpu

@@ -1,0 +1,83 @@
+// *** begin steps *** //
+.steps
+   &__item
+      $parent: &
+      position: relative
+      min-height: 148px
+      padding: 39px 14px
+      border-radius: 10px
+      text-align: center
+      &:not(:last-child)
+         margin-bottom: 94px
+      &_1
+         background-color: #2959df
+         #{$parent}-icon-wrap::after
+            transform: rotate(-5deg)
+            background-color: #2959df
+      &_2
+         background-color: #e24b2e
+         #{$parent}-icon-wrap::after
+            transform: rotate(5deg)
+            background-color: #e24b2e
+      &_3
+         background-color: #ffffff
+         #{$parent}-icon-wrap::after
+            transform: rotate(-5deg)
+            background-color: #ffffff
+      &-count
+         position: absolute
+         top: 50%
+         left: 30px
+         transform: translateY(-75%)
+         +f('dp700')
+         line-height: 40px
+         #{$parent}_1 &
+            font-size: 208px
+            color: #1f4ed1
+         #{$parent}_2 &
+            font-size: 205px
+            color: #d14024
+         #{$parent}_3 &
+            color: #dcdcdc
+            font-size: 203px
+      &-icon
+         position: relative
+         z-index: 2
+         &-wrap
+            position: absolute
+            z-index: 1
+            top: -70px
+            left: 50%
+            margin-left: -44px
+            +flexCenter
+            width: 88px
+            height: 88px
+            border-radius: 10px
+            &::after
+               +coverdiv
+               z-index: 1
+               border-radius: 10px
+               box-shadow: 0 1px 35px 1px rgba(23, 23, 23, 0.42)
+               content: ''
+      &-text
+         position: relative
+         z-index: 1
+         font-size: 17px
+         line-height: 23px
+         color: #ffffff
+         #{$parent}_3 &
+            color: #3b1eaa
+// end steps //
+
+// *** begin socials *** //
+.socials
+   display: flex
+   &__link
+      $parent: &
+      &:not(:last-child)
+         margin-right: 8px
+      &-icon
+         transition: .3s ease-in-out
+         #{$parent}:hover &
+            opacity: .7
+// end socials //

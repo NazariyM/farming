@@ -1,0 +1,175 @@
+// *** begin screen *** //
+.screen
+   position: relative
+   height: 100vh
+   background-color: #3b1eaa
+   +cover
+   &__container
+      position: relative
+      z-index: 1
+      display: flex
+      align-items: center
+      height: 100%
+   &__text
+   &__title
+      margin-bottom: 30px
+   &__descr
+      margin-bottom: 30px
+      +f('dp400', 30, 40)
+      color: #fff
+      &-currency
+         +f('rob400')
+   
+// end screen //
+
+// *** begin start *** //
+.start
+   position: relative
+   padding: 100px 0
+   background-color: #3b1eaa
+   &__title
+      margin-bottom: 40px
+   &__descr
+      margin-bottom: 50px
+      color: #fff
+      &-text
+         &:not(:last-child)
+            margin-bottom: 20px
+   &__user
+      position: absolute
+      &_1
+         top: 0
+         left: 33px
+      &_2
+         left: 50%
+         bottom: 0
+         margin-left: -300px
+      &_3
+         top: 30%
+         right: 0
+// end start //
+
+// *** begin earn *** //
+.earn
+   +cover
+   &::after
+      +coverdiv
+      background-color: rgba(#000, .75)
+      content: ''
+   &__container
+      position: relative
+      z-index: 1
+   &__
+// end earn //
+
+// *** begin partner *** //
+.partner
+   position: relative
+   padding: 67px 0 84px
+   +cover
+   &::after
+      opacity: .95
+      +coverdiv
+      background-image: linear-gradient(to bottom right, #ce462c, #f8af2f)
+      content: ''
+   &__container
+      position: relative
+      z-index: 1
+   &__section-title
+      margin-bottom: 30px
+   &__slider
+      .slick-list
+         margin: 0 -15px
+      .slider-dots
+         margin-top: 60px
+      &-item
+         padding: 15px
+         color: #fff
+         &-inner
+            padding: 20px 30px
+            box-shadow: 0 0 27px 1px rgba(226, 75, 46, 0.24)
+            border-radius: 10px
+            background-image: linear-gradient(-49deg, #e24b2e 0%, #e24b2e 100%)
+   &__item
+      &-title
+         margin-bottom: 15px
+         +f('dp500', 23, 40)
+      &-descr
+         font-size: 16px
+         line-height: 23px
+         +f('dp400')
+// end partner //
+
+// *** begin news *** //
+.news
+   padding: 85px 0 105px
+   background-image: linear-gradient(-28deg, #3b1eaa 0%, #5934a2 100%)
+   &__container
+      max-width: 1200px
+   &__slider
+      .slick-list
+         margin: 0 -15px
+      .slider-btn
+         &_prev
+            left: -70px
+         &_next
+            right: -70px
+   &__item
+      margin: 0 15px
+      color: #fff
+      &-img-wrap
+         margin-bottom: 30px
+         overflow: hidden
+         border-radius: 15px
+         +ratio(370, 267)
+         +cover-img
+         img
+            +coverdiv
+            
+      &-content
+         display: flex
+         align-items: flex-start
+         font-size: 16px
+         line-height: 22px
+      &-text
+         flex: 0 1 calc(100% - 70px)
+         padding-right: 30px
+         font-size: 16px
+         line-height: 22px
+      &-date
+         flex: 0 0 70px
+         width: 70px
+         padding: 5px
+         border-radius: 10px
+         border: 1px solid #eaa12e
+         text-align: center
+         span
+            display: block
+            color: #eaa12e
+// end news //
+
+.begin
+   padding: 60px 0
+   background-color: #3727a3
+   &__top
+      &-text
+         margin-bottom: 50px
+         text-align: center
+      &-descr
+         margin-top: 20px
+         +f('dp400', 23, 28)
+         color: #fff
+   &__form
+      &-field
+         &:not(:last-child)
+            margin-bottom: 25px
+      &-submit
+   &__actions
+      max-width: 1024px
+      margin: 30px auto 0
+      text-align: center
+      &-agree
+         margin-bottom: 15px
+         +f('dp400', 13, 28)
+         color: #fff
+      

@@ -1,0 +1,75 @@
+body
+   min-width: 320px
+   -webkit-font-smoothing: antialiased
+   -moz-osx-font-smoothing: grayscale
+   +f('dp500', 18, 29)
+   color: $color1
+   +xs
+      font-size: 16px
+      line-height: 26px
+   &.is-locked
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      height: 0
+      overflow: hidden
+
+.container
+   max-width: 1230px
+   margin: 0 auto
+   padding: 0 15px
+   
+.row
+   display: flex
+   flex-wrap: wrap
+   margin: 0 -15px
+   
+.col
+   padding: 0 15px
+   &_md
+      flex: 0 1 50%
+      width: 50%
+
+.main
+   overflow: hidden
+   
+.section-title
+   text-align: center
+   &__icon
+      display: inline-block
+      margin: 0 0 30px
+   &__text
+      +f('dp500', 40, 40)
+      text-transform: uppercase
+      color: #fff
+   
+.title-lg
+   +f('dp700', 90, 90)
+   color: #fff
+
+.btn
+   position: relative
+   display: inline-block
+   padding: 16px 34px 17px
+   outline: 0
+   border-radius: 32px
+   transition: .3s ease-in-out
+   +f('dp500', 25)
+   text-transform: uppercase
+   line-height: 1.2
+   color: #fff
+   &:hover
+   &_orange
+      box-shadow: 0 0 27px 1px rgba(226, 75, 46, 0.24)
+      background-color: #e24b2e
+   &_sm
+      padding: 11px 15px
+      font-size: 14px
+   &_lg
+      padding: 12px 51px
+      font-size: 40px
+      border-radius: 36px
+      
+.section-label
+   +vcenter

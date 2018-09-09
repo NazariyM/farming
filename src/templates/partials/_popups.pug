@@ -1,0 +1,7 @@
+mixin popup(el)
+	case el.name
+
+		when 'add-testimonial'
+			+b.popup(data-popup-id='add-testimonial', tabindex='-1', role='dialog')
+				+e.container
+					+e.close.js-popup-close: +i('close')

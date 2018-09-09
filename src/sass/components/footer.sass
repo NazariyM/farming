@@ -1,0 +1,49 @@
+.footer
+   position: relative
+   padding: 30px
+   background-color: #3727a3
+   color: #fff
+   +f('dp400', 16)
+   line-height: 1.2
+   overflow: hidden
+   &__container
+      position: relative
+      z-index: 1
+   &__row
+      justify-content: space-between
+   &__col
+      padding: 0 15px
+      &:nth-child(1)
+         flex: 0 0 270px
+      &:nth-child(2)
+         flex: 0 0 485px
+      &:nth-child(3)
+         flex: 0 0 285px
+         margin-right: 15px
+      
+   &__title
+      margin-bottom: 30px
+      +f('dp500')
+      font-size: 20px
+      text-transform: uppercase
+   &__descr
+      &:not(:last-child)
+         margin-bottom: 15px
+   &__contacts
+      &-tel
+         display: inline-block
+         margin-bottom: 20px
+         text-transform: uppercase
+         font-size: 30px
+      &-mail
+      &-address
+         font-style: normal
+   &__dev-link
+      display: block
+   &__decor-rect
+      position: absolute
+      top: 0
+      left: 10%
+   &__socials
+      margin-bottom: 15px
+      

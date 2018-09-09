@@ -1,0 +1,77 @@
+.popup
+   position: fixed
+   top: 0
+   right: 0
+   bottom: 0
+   left: 0
+   opacity: 0
+   visibility: hidden
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+   z-index: 1300
+   overflow: auto
+   outline: 0
+   text-align: center
+   font-size: 0
+   transform: translate3d(0, 0, 0)
+   background-image: linear-gradient(45deg, #5936b2 0%, #7453c6 100%)
+   transition: .3s ease-in-out
+   will-change: opacity, transform
+   $parent: &
+   &:after
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      width: 0
+      height: 100%
+   
+   &.opened
+      opacity: 1
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+      visibility: visible
+   &__close
+      position: absolute
+      top: -30px
+      right: -15px
+      z-index: 10
+      cursor: pointer
+      padding: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 0
+      width: 32px
+      height: 32px
+      +xs
+         top: -30px
+         right: 0
+      &:hover svg
+         fill: $color3
+      svg
+         fill: $white
+         width: 10px
+         height: 10px
+         +trs
+   
+   &__container
+      display: inline-block
+      vertical-align: middle
+      max-width: 874px
+      width: 100%
+      position: relative
+      padding: 0 15px
+      margin: 30px auto
+      transition: opacity .5s ease, transform .5s ease
+      transform: translate3d(0, -100px, 0)
+      will-change: transform, opacity
+      text-align: left
+      border-radius: 5px
+      +mob-fix
+
+body.popup-opened
+   overflow: hidden
+
+.popup.opened .popup__container
+   -webkit-transform: translate3d(0, 0, 0)
+   -moz-transform: translate3d(0, 0, 0)
+   transform: translate3d(0, 0, 0)
+  

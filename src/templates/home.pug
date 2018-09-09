@@ -1,0 +1,173 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Главная'
+
+block content
+
+	//begin main
+	main.main
+
+		//begin screen
+		+b.SECTION.screen(style='background-image: url(img/bg/screen_bg.png)')
+			+e.IMG.section-label.section-label(src='img/labels/farming-label.svg' alt='image')
+			+e.container.container
+				+e.row.row
+					+e.text.col.col_md
+						+e.H2.title.title-lg Майнинг — это легко!
+						+e.P.descr С нами ты можешь заработать больше, чем можешь себе представить. Мы принимаем любые суммы в рублях, начиная от 1 000
+							+e.SPAN.descr-currency ₽
+							| .
+						+btn('b', 'ХОЧУ КОНСУЛЬТАЦИЮ', '_orange')
+					+e.block.col.col_md
+		//end screen
+			
+		//begin start
+		+b.SECTION.start
+			+e.IMG.section-label.section-label(src='img/labels/start-label.svg' alt='image')
+			+e.user._1.icon-user_1
+			+e.user._2.icon-user_2
+			+e.user._3.icon-user_3
+			+e.container.container
+				.row
+					.col.col_md
+						+e.H2.title.title-lg Как начать майнить
+						+e.descr
+							+e.P.descr-text Облачный майнинг — процесс добычи киптовалюты с использованием удаленного центра обработки данных с общей вычислительной мощностью. Это позволяет пользователям майнить криптовалюту без огромных затрат на оборудование и электричество. Вы просто выбираете желаемую мощность и получаете доход.
+							+e.P.descr-text Каждые 24 часа или по завершению контракта вы будете получать добытую криптовалюту на свой электронный кошелёк соразмерно количеству арендованной мощности.
+						+btn('b', 'ХОЧУ КОНСУЛЬТАЦИЮ', '_orange')
+
+					+b.steps.col.col_md
+						-
+							stepsList = [
+							['doc', 'Мы заключаем с тобой официальный договор с гарантией доходности. Подписываем его, распиваем шампанское. Ты выбираешь, на какой срок и какую сумму ты готов вложить.'],
+							['graph', 'Ты начинаешь зарабатывать с помощью нашего крутого оборудования в первый же день. По всем вопросам ты всегда можешь позвонить нам. А следить за курсами ты можешь на этом сайте.'],
+							['coins', 'Первые выплаты на ваш кошелек поступят спустя час, которые ты можешь вывести любым удобным способом: на расчетный счет, на карточный счет, на любой электронный кошелек.']
+							]
+						for stepsItem, i in stepsList
+							+e.item(class= `_${i + 1}`)
+								+e.item-count= `${i + 1}`
+								+e.item-icon-wrap
+									+e.item-icon(class= `icon-${stepsItem[0]}`)
+								+e.item-text
+									p= stepsItem[1]
+		//end start
+
+		//begin earn
+		+b.SECTION.earn(style='background-image: url(img/bg/earn_bg.jpg)')
+			+e.container.container
+				.row
+					+e.col
+
+		//end earn
+			
+		//begin partner
+		+b.SECTION.partner(style='background-image: url(img/bg/partner_bg.jpg)')
+			+e.container.container
+				+b.section-title.partner__section-title
+					+e.icon.icon-handshake
+					+e.H3.text хочешь стать нашим партнёром?
+
+				+e.slider.slider.js-partner-slider
+					-i = 0
+					while i < 3
+						+e.slider-item
+							+e.slider-item-inner
+								+e.item
+									+e.H4.item-title Как правильно подобрать валюту?
+									+e.P.item-descr Малому бизнесу нужны деньги, но нет способа получить их просто. У обычных людей есть деньги, и они хотели бы, чтобы они работали. «Поток» соединяет две группы. Клиенты банка инвестируют собственные деньги в компании, а компании получают деньги в режиме онлайн.
+								+e.item
+									+e.H4.item-title Как устроен процесс?
+									+e.P.item-descr «Поток» создаёт правовые отношения между инвесторами и компаниями, а банк обеспечивает перевод денег. Деньги инвесторов поступают компаниям в виде займа. Компании возвращают деньги с процентами.
+
+						+e.slider-item
+							+e.slider-item-inner
+								+e.item
+									+e.H4.item-title Как отбираются компании?
+									+e.P.item-descr В «Альфа-Банке» обслуживается более 300 000 компаний малого бизнеса. На основе данных об этих компаниях создана скоринговая система, которая оценивает компании и предлагает лучших инвесторам.
+								+e.item
+									+e.H4.item-title Как быстро я заработаю денег?
+									+e.P.item-descr «Поток» создаёт правовые отношения между инвесторами и компаниями, а банк обеспечивает перевод денег. Деньги инвесторов поступают компаниям в виде займа. Компании возвращают деньги с процентами.
+						-i++
+		//end partner
+
+		//begin news
+		+b.SECTION.news
+			+e.container.container
+				+b.section-title.partner__section-title
+					+e.icon.icon-doc
+					+e.H3.text наши майнинг ньюз
+
+				+e.slider.slider.js-news-slider
+					-
+						newsList = [{
+						img: '1',
+						text: 'Курс биткоина удерживается выше $8000, другие криптовалюты подорожали',
+						date1: '27/07',
+						date2: '18:30'
+						}, {
+						img: '2',
+						text: 'В Венесуэле грядет деноминация, нацвалюта будет привязана к криптовалюте петро',
+						date1: '26/07',
+						date2: '15:47'
+						}, {
+						img: '3',
+						text: 'Мошенники воспользовались удалением расширения MetaMask из магазина Chrome',
+						date1: '23/07',
+						date2: '22:39'
+						}, {
+						img: '1',
+						text: 'Курс биткоина удерживается выше $8000, другие криптовалюты подорожали',
+						date1: '27/07',
+						date2: '18:30'
+						}, {
+						img: '2',
+						text: 'В Венесуэле грядет деноминация, нацвалюта будет привязана к криптовалюте петро',
+						date1: '26/07',
+						date2: '15:47'
+						}, {
+						img: '3',
+						text: 'Мошенники воспользовались удалением расширения MetaMask из магазина Chrome',
+						date1: '23/07',
+						date2: '22:39'
+						}]
+
+					mixin newsItem(item)
+						+e.item
+							+e.item-img-wrap
+								+e.IMG(src=`img/content/news_${item.img}.jpg` alt='image')
+							+e.item-content
+								+e.P.item-text= item.text
+								+e.item-date
+									span= item.date1
+									span= item.date2
+					each item in newsList
+						+newsItem(item)
+		//end news
+			
+		//begin begin
+		+b.SECTION.begin
+			+e.container.container
+				+e.top-text
+					+b.section-title.begin__section-title
+						+e.H3.text НАЧНИ МАЙНИТЬ УЖЕ СЕЙЧАС
+					+e.P.top-descr Связаться с нами очень просто, заполни форму и получи специальное предложение через несколько минут!
+
+				+e.FORM.form(action='#!' method='POST')
+					+e.form-row.row
+						+e.form-col.col._md
+							+b.form-field.begin__form-field
+								+e.INPUT.input(type='text' name='' placeholder='Как тебя зовут?' required)
+							+b.form-field.begin__form-field
+								+e.INPUT.input(type='text' name='' placeholder='Твой номер телефона' required)
+							+b.form-field.begin__form-field
+								+e.INPUT.input(type='text' name='' placeholder='Есть e-mail?')
+						+e.form-col.col._md
+							+b.form-field.begin__form-field
+								+e.TEXTAREA.form-textarea.textarea(placeholder='Напиши, если есть какие-то вопросы')
+						+e.actions
+							+e.P.actions-agree Нажимая кнопку «Хочу майнить сейчас», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
+							+e.INPUT.form-submit.btn._orange._lg(type='submit' value='ХОЧУ МАЙНИТЬ сейчас')
+		//end begin
+
+	//end main

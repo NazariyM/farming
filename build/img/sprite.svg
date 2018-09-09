@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+        <path id="a" d="M134.77 4919.85l.5-.35-.5-.35 36-52 2.46 1.7-35.06 50.65 35.06 50.65-2.46 1.7z"/>
+    
+        <path id="a" d="M1427.23 4971.85l-2.46-1.7 35.06-50.65-35.06-50.65 2.46-1.7 36 52-.5.35.5.35z"/>
+    </defs><symbol id="icon-close" viewBox="0 0 41.756 41.756">
+    <path d="M27.948 20.878L40.291 8.536a5 5 0 1 0-7.07-7.071L20.878 13.809 8.535 1.465a5 5 0 0 0-7.07 7.071l12.342 12.342L1.465 33.22a5 5 0 1 0 7.07 7.071l12.343-12.342 12.343 12.343c.976.977 2.256 1.464 3.535 1.464s2.56-.487 3.535-1.464a5 5 0 0 0 0-7.071L27.948 20.878z"/>
+</symbol><symbol id="icon-sld-arr-l" viewBox="0 0 40 105">
+    
+    <use xlink:href="#a" opacity=".5" transform="translate(-134 -4867)"/>
+</symbol><symbol id="icon-sld-arr-r" viewBox="0 0 40 105">
+    
+    <use xlink:href="#a" transform="translate(-1424 -4867)"/>
+</symbol></svg>

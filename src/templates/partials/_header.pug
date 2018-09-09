@@ -1,0 +1,25 @@
+//begin header
++b.HEADER.header(class= headerClass)
+	+e.container.container
+		+e.A.logo(href='#!')
+			+e.IMG.logo-img(src='img/other/logo.png' alt='Farming')
+			+e.H1.logo-title Farming
+			+e.SPAN.logo-label inc
+		+e.NAV.nav
+			-
+				navList = [
+				'КАК МАЙНИТЬ',
+				'КАК ЭТО ДЕЛАЕМ МЫ',
+				'стать партнёром',
+				'контакты'
+				]
+			+e.UL.nav-list
+				for navLink in navList
+					li: a(href=`#!`)= navLink
+
+		+btn('b', 'Обратный звонок', '_orange _sm header__btn')
+
+		//+e.BUTTON.nav-btn(type='button')
+			+e.SPAN.nav-btn-burger
+				+e.SPAN.nav-btn-lines
+//end header

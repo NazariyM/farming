@@ -1,0 +1,120 @@
+$icons: (0:0)
+$icons: map-merge($icons,('coins': (X: -387px, Y:0px, W: 64px, H: 64px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('doc': (X: -320px, Y:-297px, W: 57px, H: 60px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('fb': (X: -387px, Y:-74px, W: 64px, H: 64px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('graph': (X: -158px, Y:-171px, W: 59px, H: 53px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('handshake': (X: -229px, Y:-211px, W: 88px, H: 76px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('inst': (X: -387px, Y:-296px, W: 63px, H: 63px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('newspaper': (X: -229px, Y:-297px, W: 81px, H: 81px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('tw': (X: -387px, Y:-148px, W: 64px, H: 64px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('user_1': (X: -229px, Y:0px, W: 148px, H: 201px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('user_2': (X: 0px, Y:-171px, W: 148px, H: 214px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('user_3': (X: 0px, Y:0px, W: 219px, H: 161px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('yt': (X: -387px, Y:-222px, W: 64px, H: 64px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+  $icon: map-get($icons, $icon)
+  @return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  width: icon-attr($iconName, W)
+  height: icon-attr($iconName, H)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  $width: icon-attr($iconName, W)
+  $height: icon-attr($iconName, H)
+  width: $width/2
+  height: $height/2
+  $x: icon-attr($iconName, X)
+  $y: icon-attr($iconName, Y)
+  background-position: $x/2 $y/2
+  $tw: icon-attr($iconName, TW)   
+  $th: icon-attr($iconName, TH)
+  background-size: $tw/2 $th/2    
+
+
+@mixin s($i)
+  +sprite($i)
+@mixin sp($i)
+  +sprite-position($i)
+@mixin sr($i)
+  +sprite-retina($i)  
+
+
+.icon-coins
+  width: 64px
+  height: 64px
+  background-image: url('../img/sprite.png')
+  background-position: -387px 0px
+
+.icon-doc
+  width: 57px
+  height: 60px
+  background-image: url('../img/sprite.png')
+  background-position: -320px -297px
+
+.icon-fb
+  width: 64px
+  height: 64px
+  background-image: url('../img/sprite.png')
+  background-position: -387px -74px
+
+.icon-graph
+  width: 59px
+  height: 53px
+  background-image: url('../img/sprite.png')
+  background-position: -158px -171px
+
+.icon-handshake
+  width: 88px
+  height: 76px
+  background-image: url('../img/sprite.png')
+  background-position: -229px -211px
+
+.icon-inst
+  width: 63px
+  height: 63px
+  background-image: url('../img/sprite.png')
+  background-position: -387px -296px
+
+.icon-newspaper
+  width: 81px
+  height: 81px
+  background-image: url('../img/sprite.png')
+  background-position: -229px -297px
+
+.icon-tw
+  width: 64px
+  height: 64px
+  background-image: url('../img/sprite.png')
+  background-position: -387px -148px
+
+.icon-user_1
+  width: 148px
+  height: 201px
+  background-image: url('../img/sprite.png')
+  background-position: -229px 0px
+
+.icon-user_2
+  width: 148px
+  height: 214px
+  background-image: url('../img/sprite.png')
+  background-position: 0px -171px
+
+.icon-user_3
+  width: 219px
+  height: 161px
+  background-image: url('../img/sprite.png')
+  background-position: 0px 0px
+
+.icon-yt
+  width: 64px
+  height: 64px
+  background-image: url('../img/sprite.png')
+  background-position: -387px -222px
