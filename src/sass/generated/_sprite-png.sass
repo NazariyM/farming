@@ -1,16 +1,17 @@
 $icons: (0:0)
-$icons: map-merge($icons,('coins': (X: -387px, Y:0px, W: 64px, H: 64px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('doc': (X: -320px, Y:-297px, W: 57px, H: 60px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('fb': (X: -387px, Y:-74px, W: 64px, H: 64px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('graph': (X: -158px, Y:-171px, W: 59px, H: 53px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('handshake': (X: -229px, Y:-211px, W: 88px, H: 76px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('inst': (X: -387px, Y:-296px, W: 63px, H: 63px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('newspaper': (X: -229px, Y:-297px, W: 81px, H: 81px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('tw': (X: -387px, Y:-148px, W: 64px, H: 64px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('user_1': (X: -229px, Y:0px, W: 148px, H: 201px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('user_2': (X: 0px, Y:-171px, W: 148px, H: 214px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('user_3': (X: 0px, Y:0px, W: 219px, H: 161px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
-$icons: map-merge($icons,('yt': (X: -387px, Y:-222px, W: 64px, H: 64px, TW: 451px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('chart': (X: -387px, Y:0px, W: 64px, H: 64px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('coins': (X: -387px, Y:-74px, W: 64px, H: 64px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('doc': (X: -461px, Y:-73px, W: 57px, H: 60px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('fb': (X: -387px, Y:-296px, W: 64px, H: 64px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('graph': (X: -461px, Y:-143px, W: 59px, H: 53px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('handshake': (X: -229px, Y:-211px, W: 88px, H: 76px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('inst': (X: -461px, Y:0px, W: 63px, H: 63px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('newspaper': (X: -229px, Y:-297px, W: 81px, H: 81px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('tw': (X: -387px, Y:-222px, W: 64px, H: 64px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('user_1': (X: -229px, Y:0px, W: 148px, H: 201px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('user_2': (X: 0px, Y:-171px, W: 148px, H: 214px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('user_3': (X: 0px, Y:0px, W: 219px, H: 161px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('yt': (X: -387px, Y:-148px, W: 64px, H: 64px, TW: 524px, TH: 385px, IMG: '../img/sprite.png')))
 
 
 // Gets an attribute from the sass map
@@ -47,29 +48,35 @@ $icons: map-merge($icons,('yt': (X: -387px, Y:-222px, W: 64px, H: 64px, TW: 451p
   +sprite-retina($i)  
 
 
-.icon-coins
+.icon-chart
   width: 64px
   height: 64px
   background-image: url('../img/sprite.png')
   background-position: -387px 0px
 
-.icon-doc
-  width: 57px
-  height: 60px
-  background-image: url('../img/sprite.png')
-  background-position: -320px -297px
-
-.icon-fb
+.icon-coins
   width: 64px
   height: 64px
   background-image: url('../img/sprite.png')
   background-position: -387px -74px
 
+.icon-doc
+  width: 57px
+  height: 60px
+  background-image: url('../img/sprite.png')
+  background-position: -461px -73px
+
+.icon-fb
+  width: 64px
+  height: 64px
+  background-image: url('../img/sprite.png')
+  background-position: -387px -296px
+
 .icon-graph
   width: 59px
   height: 53px
   background-image: url('../img/sprite.png')
-  background-position: -158px -171px
+  background-position: -461px -143px
 
 .icon-handshake
   width: 88px
@@ -81,7 +88,7 @@ $icons: map-merge($icons,('yt': (X: -387px, Y:-222px, W: 64px, H: 64px, TW: 451p
   width: 63px
   height: 63px
   background-image: url('../img/sprite.png')
-  background-position: -387px -296px
+  background-position: -461px 0px
 
 .icon-newspaper
   width: 81px
@@ -93,7 +100,7 @@ $icons: map-merge($icons,('yt': (X: -387px, Y:-222px, W: 64px, H: 64px, TW: 451p
   width: 64px
   height: 64px
   background-image: url('../img/sprite.png')
-  background-position: -387px -148px
+  background-position: -387px -222px
 
 .icon-user_1
   width: 148px
@@ -117,4 +124,4 @@ $icons: map-merge($icons,('yt': (X: -387px, Y:-222px, W: 64px, H: 64px, TW: 451p
   width: 64px
   height: 64px
   background-image: url('../img/sprite.png')
-  background-position: -387px -222px
+  background-position: -387px -148px

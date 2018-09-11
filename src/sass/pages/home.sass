@@ -1,9 +1,23 @@
 // *** begin screen *** //
 .screen
    position: relative
-   height: 100vh
+   height: 880px
    background-color: #3b1eaa
    +cover
+   overflow: hidden
+   +rmin(1350)
+      height: 100vh
+   &__row
+      margin: 85px -15px 0
+      justify-content: space-between
+   &__col
+      &:nth-child(1)
+         flex: 0 1 percentage(550 / 1200)
+         width: percentage(550 / 1200)
+         padding-top: 30px
+      &:nth-child(2)
+         flex: 0 1 percentage(615 / 1200)
+         width: percentage(615 / 1200)
    &__container
       position: relative
       z-index: 1
@@ -13,28 +27,77 @@
    &__text
    &__title
       margin-bottom: 30px
+      margin-left: -5px
    &__descr
-      margin-bottom: 30px
+      margin-bottom: 48px
       +f('dp400', 30, 40)
       color: #fff
       &-currency
          +f('rob400')
+   &__section-label
+      transform: translate(-50.5%,-46%)
+   &__decor-rect
+      position: absolute
+      &_1
+         top: -63%
+         width: 90%
+         height: 100%
+         left: -23%
+         opacity: .5
+         z-index: 1
+      &_2
+         top: -55%
+         width: 120%
+         height: 120%
+         left: -23%
+         opacity: 0.7
+      &_3
+         bottom: -55%
+         left: -25%
+         width: 80%
+         height: 80%
+         opacity: 0.35
    
 // end screen //
+
+// *** begin quotations *** //
+.quotations
+   position: relative
+   padding: 70px 0 80px
+   background-image: linear-gradient(-28deg, #5934a2 0%, #dc4a33 100%)
+   &__section-title
+      margin-bottom: 62px
+      .section-title__icon
+         margin: 0 0 20px
+   &__container
+      position: relative
+      z-index: 3
+// end quotations //
 
 // *** begin start *** //
 .start
    position: relative
-   padding: 100px 0
+   padding: 127px 0 110px
    background-color: #3b1eaa
+   &__container
+      position: relative
+      z-index: 3
+   &__row
+      justify-content: space-between
+   &__col
+      &:nth-child(1)
+         flex: 0 1 42%
+      &:nth-child(2)
+         flex: 0 1 percentage(615 / 1200)
    &__title
-      margin-bottom: 40px
+      margin-left: -7px
+      margin-bottom: 50px
    &__descr
       margin-bottom: 50px
       color: #fff
       &-text
          &:not(:last-child)
-            margin-bottom: 20px
+            margin-bottom: 30px
    &__user
       position: absolute
       &_1
@@ -43,14 +106,17 @@
       &_2
          left: 50%
          bottom: 0
-         margin-left: -300px
+         margin-left: -197px
       &_3
-         top: 30%
-         right: 0
+         top: 32%
+         right: -1.6%
+
 // end start //
 
 // *** begin earn *** //
 .earn
+   position: relative
+   padding: 105px 0 135px
    +cover
    &::after
       +coverdiv
@@ -58,8 +124,29 @@
       content: ''
    &__container
       position: relative
-      z-index: 1
-   &__
+      z-index: 3
+   &__row
+      flex-wrap: nowrap
+      justify-content: space-between
+   &__col
+      padding: 0 15px
+      &:nth-child(1)
+         flex: 0 1 51%
+      &:nth-child(2)
+         flex: 0 0 565px
+         margin-right: -20px
+   &__title
+      margin-left: -7px
+      margin-bottom: 50px
+   &__descr
+      max-width: 485px
+      margin-bottom: 48px
+      &-text
+         &:not(:last-child)
+            margin-bottom: 30px
+   &__stat
+      margin-top: 18px
+      
 // end earn //
 
 // *** begin partner *** //
@@ -76,23 +163,29 @@
       position: relative
       z-index: 1
    &__section-title
-      margin-bottom: 30px
+      margin-bottom: 55px
    &__slider
       .slick-list
          margin: 0 -15px
       .slider-dots
-         margin-top: 60px
+         margin-top: 40px
       &-item
          padding: 15px
          color: #fff
          &-inner
-            padding: 20px 30px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            min-height: 452px
+            padding: 25px 30px 83px 40px
             box-shadow: 0 0 27px 1px rgba(226, 75, 46, 0.24)
             border-radius: 10px
             background-image: linear-gradient(-49deg, #e24b2e 0%, #e24b2e 100%)
    &__item
+      &:not(:last-child)
+         margin-bottom: 30px
       &-title
-         margin-bottom: 15px
+         margin-bottom: 11px
          +f('dp500', 23, 40)
       &-descr
          font-size: 16px
@@ -102,23 +195,30 @@
 
 // *** begin news *** //
 .news
-   padding: 85px 0 105px
+   padding: 85px 0 90px
    background-image: linear-gradient(-28deg, #3b1eaa 0%, #5934a2 100%)
    &__container
       max-width: 1200px
+   &__section-title
+      margin-bottom: 40px
    &__slider
       .slick-list
          margin: 0 -15px
+         padding: 15px 0
       .slider-btn
          &_prev
             left: -70px
          &_next
             right: -70px
    &__item
+      display: block
       margin: 0 15px
       color: #fff
+      transition: .3s ease-in-out
+      &:hover
+         transform: translateY(-10px)
       &-img-wrap
-         margin-bottom: 30px
+         margin-bottom: 17px
          overflow: hidden
          border-radius: 15px
          +ratio(370, 267)
@@ -139,6 +239,7 @@
       &-date
          flex: 0 0 70px
          width: 70px
+         margin-top: 5px
          padding: 5px
          border-radius: 10px
          border: 1px solid #eaa12e
@@ -148,15 +249,23 @@
             color: #eaa12e
 // end news //
 
+// *** begin begin *** //
 .begin
-   padding: 60px 0
+   padding: 87px 0 0
    background-color: #3727a3
+   .section-title__text
+      font-size: 50px
+      line-height: 40px
+   &__container
+      max-width: 1200px
+   
    &__top
       &-text
-         margin-bottom: 50px
+         margin-bottom: 65px
          text-align: center
       &-descr
-         margin-top: 20px
+         max-width: 650px
+         margin: 34px auto 0
          +f('dp400', 23, 28)
          color: #fff
    &__form
@@ -165,11 +274,11 @@
             margin-bottom: 25px
       &-submit
    &__actions
-      max-width: 1024px
+      max-width: 1030px
       margin: 30px auto 0
       text-align: center
       &-agree
-         margin-bottom: 15px
+         margin-bottom: 20px
          +f('dp400', 13, 28)
          color: #fff
-      
+// end begin //

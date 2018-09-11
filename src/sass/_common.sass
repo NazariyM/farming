@@ -3,7 +3,7 @@ body
    -webkit-font-smoothing: antialiased
    -moz-osx-font-smoothing: grayscale
    +f('dp500', 18, 29)
-   color: $color1
+   color: #fff
    +xs
       font-size: 16px
       line-height: 26px
@@ -38,7 +38,7 @@ body
    text-align: center
    &__icon
       display: inline-block
-      margin: 0 0 30px
+      margin: 0 0 25px
    &__text
       +f('dp500', 40, 40)
       text-transform: uppercase
@@ -47,23 +47,42 @@ body
 .title-lg
    +f('dp700', 90, 90)
    color: #fff
+   &_orange
+      background-image: linear-gradient(to top, #d1492e 0%, #ff2a00 100%)
+      -webkit-background-clip: text
+      opacity: 0.9
+      color: #ff2900
 
 .btn
    position: relative
    display: inline-block
-   padding: 16px 34px 17px
+   padding: 16px 20px 17px
+   min-width: 328px
    outline: 0
    border-radius: 32px
-   transition: .3s ease-in-out
    +f('dp500', 25)
    text-transform: uppercase
    line-height: 1.2
    color: #fff
-   &:hover
+   transition: .3s ease-in-out
    &_orange
       box-shadow: 0 0 27px 1px rgba(226, 75, 46, 0.24)
       background-color: #e24b2e
+      &:hover
+         box-shadow: 0 0 27px 1px rgba(226,75,46,.24), inset 0 0 25px 1px rgba(86, 20, 8, 0.85)
+   &_transparent
+      padding: 14px 42px 15px
+      box-shadow: 0 0 27px 1px rgba(59, 30, 170, 0.24)
+      border: 2px solid #ffffff
+      &:hover
+         box-shadow: 0 0 27px 1px rgba(59, 30, 170, 0.24), inset 0 0 30px 3px rgba(#fff, .7)
+   &_lilac
+      box-shadow: 0 1px 24px 1px rgba(59, 30, 170, 0.57)
+      background-color: #3b1eaa
+      &:hover
+         box-shadow: 0 1px 24px 1px rgba(59,30,170,.57), inset 0 1px 24px 1px rgb(18, 0, 86)
    &_sm
+      min-width: 0
       padding: 11px 15px
       font-size: 14px
    &_lg
@@ -73,3 +92,11 @@ body
       
 .section-label
    +vcenter
+   z-index: 1
+   &_text
+      opacity: 0.27
+      color: #959595
+      +f('dp700')
+      font-size: 239px
+      line-height: 239.19px
+      text-transform: uppercase

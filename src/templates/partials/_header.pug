@@ -8,18 +8,18 @@
 		+e.NAV.nav
 			-
 				navList = [
-				'КАК МАЙНИТЬ',
-				'КАК ЭТО ДЕЛАЕМ МЫ',
-				'стать партнёром',
-				'контакты'
+					['КАК МАЙНИТЬ', 'start'],
+					['КАК ЭТО ДЕЛАЕМ МЫ', 'earn'],
+					['стать партнёром', 'partner'],
+					['контакты', 'contacts']
 				]
 			+e.UL.nav-list
 				for navLink in navList
-					li: a(href=`#!`)= navLink
+					li: a(href=`#${navLink[1]}`)= navLink[0]
 
 		+btn('b', 'Обратный звонок', '_orange _sm header__btn')
 
-		//+e.BUTTON.nav-btn(type='button')
+		+e.BUTTON.nav-btn(type='button')
 			+e.SPAN.nav-btn-burger
 				+e.SPAN.nav-btn-lines
 //end header

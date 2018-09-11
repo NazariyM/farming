@@ -7,7 +7,9 @@ class Sliders {
     this.$partnerSld = $('.js-partner-slider');
     this.$newsSld = $('.js-news-slider');
 
-    const iconArr = svgIcon('sld-arr-l');
+    const iconArr = `<svg viewBox="0 0 40 105" width="100%" height="100%">
+    <g transform="translate(-134 -4867)"><path d="M134.77 4919.85l.5-.35-.5-.35 36-52 2.46 1.7-35.06 50.65 35.06 50.65-2.46 1.7z"></path></g>
+</svg>`;
 
     this.defaultOptions = {
       slidesToShow: 1,
@@ -44,6 +46,8 @@ class Sliders {
       slidesToShow: 2,
       slidesToScroll: 2
     }));
+
+    this.$partnerSld.slick('slickGoTo', 2, true);
   }
 
   initNewsSld() {

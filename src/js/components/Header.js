@@ -1,6 +1,5 @@
 import {
   $body,
-  $window,
   throttle,
   css,
   Resp, $header, $scrolledElements
@@ -18,14 +17,12 @@ class Header {
 	}
 
 	init() {
-		this.initFix();
 		this.initScroll();
 		this.bindEvents();
 	}
 
 	bindEvents() {
 		this.navBtn.addEventListener('click', () => {
-      this.beforeOpen();
 			this.toggleMenu();
     });
 		 this.onResize();
@@ -36,11 +33,6 @@ class Header {
       this.navBtn.classList.remove(css.active);
       this.nav.classList.remove(css.active);
     };
-  }
-
-  beforeOpen() {
-    this.scrollTop = $window.scrollTop();
-    this.scrollTop > 0 ? this.header.classList.add(css.menuActive) : false;
   }
 
 	toggleMenu() {
@@ -68,19 +60,12 @@ class Header {
 
   initScroll() {
 		const _this = this;
-    const offsetTop = Resp.isDesk ? 70 : 60;
-    const $logo = $('.header__logo');
     const $link = $header.find('.header__nav-list').find('a');
-
-    $logo.on('click', function (e) {
-    	e.preventDefault();
-      $scrolledElements.animate({scrollTop: $body.offset().top }, 1500);
-    });
 
     $link.on('click', function (e) {
       e.preventDefault();
       const el = $(this).attr('href');
-      $scrolledElements.animate({scrollTop: $(el).offset().top - offsetTop}, 1500);
+      $scrolledElements.animate({scrollTop: $(el).offset().top }, 1500);
       _this.nav.classList.remove(css.active);
       _this.navBtn.classList.remove(css.active);
       return false;
