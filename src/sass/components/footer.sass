@@ -6,31 +6,70 @@
    +f('dp400', 16)
    line-height: 1.2
    overflow: hidden
+   +md
+      padding: 160px 0 55px
+   +xs
+      padding: 130px 0 55px
    &__container
       position: relative
       z-index: 1
+      +xs
+         text-align: center
    &__row
       justify-content: space-between
    &__col
       padding: 0 15px
+      transform: translateX(100px)
       &:nth-child(1)
          flex: 0 0 270px
+         +r(1023)
+            flex: 0 1 50%
+            width: 50%
+         +xs
+            flex: 0 1 auto
+            width: 100%
+            margin-bottom: 30px
       &:nth-child(2)
-         flex: 0 0 540px
+         flex: 0 1 percentage(540 / 1230)
          margin-left: -30px
+         +md
+            flex: 0 1 percentage(490 / 1230)
+            margin-left: 0
+         +r(1023)
+            flex: 0 1 100%
+            width: 100%
+            order: -1
+            margin-bottom: 40px
+         +xs
+            margin-bottom: 30px
       &:nth-child(3)
          flex: 0 0 315px
          margin-right: 15px
-      
+         +md
+            margin-right: 0
+         +r(1023)
+            flex: 0 1 50%
+            width: 50%
+            display: flex
+            flex-direction: column
+            align-items: center
+         +xs
+            flex: 0 1 auto
+            width: 100%
    &__title
       margin-bottom: 30px
       +f('dp500')
       font-size: 20px
       text-transform: uppercase
+      +xs
+         margin-bottom: 15px
    &__descr
       &:not(:last-child)
          margin-bottom: 15px
    &__contacts
+      +xs
+         display: flex
+         flex-direction: column
       &-tel
          display: inline-block
          margin-bottom: 3px
@@ -40,14 +79,19 @@
       &-address
          margin-top: 20px
          font-style: normal
+         +xs
+            margin-top: 5px
    &__dev-link
       display: block
    &__decor-rect
+      pointer-events: none
       position: absolute
       top: -152px
       left: -65px
       min-width: 1600px
       z-index: -1
+      transform: translateX(200px)
+      opacity: 0
    &__socials
       margin-bottom: 20px
       

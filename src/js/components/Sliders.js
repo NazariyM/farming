@@ -1,5 +1,5 @@
 import 'slick-carousel';
-import { svgIcon } from '../_helpers';
+import { Resp } from '../_helpers';
 
 class Sliders {
   constructor() {
@@ -44,10 +44,25 @@ class Sliders {
   initPartnerSld() {
     this.$partnerSld.slick($.extend({}, this.defaultOptions, {
       slidesToShow: 2,
-      slidesToScroll: 2
+      slidesToScroll: 2,
+      responsive: [
+        {
+          breakpoint: 1023,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     }));
 
-    this.$partnerSld.slick('slickGoTo', 2, true);
+    if (!Resp.isTouches) {
+      const st = this.$partnerSld.find('.slick-track');
+      const stHeight = st.height();
+
+      this.$partnerSld.slick('slickGoTo', 2, true);
+      this.$partnerSld.find('.slick-slide').css('height', stHeight + 'px');
+    }
   }
 
   initNewsSld() {
@@ -55,7 +70,24 @@ class Sliders {
       slidesToShow: 3,
       slidesToScroll: 3,
       dots: false,
-      arrows: true
+      arrows: true,
+      responsive: [
+        {
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: false
+          }
+        }
+      ]
     }));
   }
 }

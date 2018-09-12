@@ -5,47 +5,35 @@
    left: 0
    z-index: 100
    width: 100%
-   padding: 60px 0
+   padding: 40px 0 0
+   opacity: 0
+   transform: translateY(-100%)
    &__container
       display: flex
       justify-content: space-between
       align-items: center
    &__logo
-      position: relative
-      &::before
-         position: absolute
-         top: -4px
-         right: 33px
-         width: 7px
-         height: 7px
-         background-color: #e24b2e
-         border-radius: 50%
-         content: ''
-      &-label
-         position: absolute
-         top: -25px
-         transform: scaleY(-1)
-         right: 16px
-         writing-mode: vertical-lr
-         +f('dp400', 16, 16)
-         color: #fff
-         text-transform: uppercase
-      &-title
-         +hide-text
+      +sm
+         z-index: 20
    &__btn
       flex: 0 0 175px
       width: 175px
-   &__nav
+      +sm
+         margin-left: auto
+         margin-right: 30px
+         z-index: 20
       +xs
+         display: none
+   &__nav
+      +sm
          flex-direction: column
          justify-content: center
          position: absolute
-         top: 130px
+         top: 0
          left: 0
          width: 100%
          height: 100vh
          z-index: 10
-         padding-bottom: 130px
          overflow: auto
          opacity: 0
          border: 0
@@ -63,13 +51,16 @@
       &-list
          display: flex
          justify-content: space-between
-         +xs
+         +sm
             flex-direction: column
             justify-content: center
             align-items: center
             overflow: auto
             height: 100%
-            padding-bottom: 0
+            padding: 50px 0 0
+            background: #3b1eaa url("../img/bg/screen_bg.png")
+            +cover
+            
          li
             position: relative
             &::after, &::before
@@ -93,8 +84,10 @@
                   left: calc(50% + 12px)
             &:not(:last-child)
                margin-right: 45px
+               +sm
+                  margin: 0 0 50px
                +xs
-                  margin-bottom: 30px
+   
             a
                position: relative
                display: block
@@ -117,7 +110,7 @@
                   transition: all 0.3s ease
                +sm
                   font-size: 12px
-               +xs
+               +sm
                   +f('gp500')
                   font-size: 16px
                &:hover
@@ -133,7 +126,7 @@
       outline: 0
       padding: 0
       z-index: 11
-      +xs
+      +sm
          display: block
       
       &.is-active span
@@ -154,7 +147,7 @@
             height: 3px
          position: relative
          transform: translateY(25px)
-         background: #fff
+         background: #e24b2e
          transition: all .3s
          #{$parent}.is-active &
             background: rgba(255, 255, 255, 0)
@@ -163,14 +156,14 @@
             position: absolute
             left: 0
             bottom: 10px
-            background: #fff
+            background: #e24b2e
             transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
          &:after
             content: ""
             position: absolute
             left: 0
             top: 10px
-            background: #fff
+            background: #e24b2e
             transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
          #{$parent}.is-active &
             &:after

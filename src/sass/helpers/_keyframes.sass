@@ -1,11 +1,14 @@
-@keyframes fadeIn
-   0%
-      opacity: 0
-   100%
-      opacity: 1
+// default anims
+[data-anim='fade-y']
+   opacity: 0
+   transform: translateY(60px)
 
-@keyframes rotating
-   0%
-      transform: rotate(0)
-   100%
-      transform: rotate(360deg)
+[data-anim-stagger="fade-x"]
+   > *
+      opacity: 0
+      transform: translateX(-60px)
+
+[data-anim-stagger="fade-y"]
+   > *
+      opacity: 0
+      transform: translateY(60px)

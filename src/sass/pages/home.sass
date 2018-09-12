@@ -1,23 +1,44 @@
 // *** begin screen *** //
 .screen
    position: relative
-   height: 880px
+   height: 100vh
    background-color: #3b1eaa
    +cover
    overflow: hidden
-   +rmin(1350)
-      height: 100vh
+   +r(1599)
+      height: auto
+      padding: 180px 0 80px
+   +sm
+      padding: 130px 0 80px
+   +xs
+      padding: 80px 0 60px
    &__row
       margin: 85px -15px 0
       justify-content: space-between
+      +r(1599)
+         margin: 0 -15px
+      +sm
+         flex-direction: column
    &__col
       &:nth-child(1)
          flex: 0 1 percentage(550 / 1200)
          width: percentage(550 / 1200)
          padding-top: 30px
+         +sm
+            flex: 0 1 auto
+            width: auto
+            margin-bottom: 50px
       &:nth-child(2)
+         opacity: 0
+         transform: translateX(60px)
          flex: 0 1 percentage(615 / 1200)
          width: percentage(615 / 1200)
+         +sm
+            flex: 0 1 auto
+            width: 630px
+            margin: 0 auto
+         +xs
+            width: auto
    &__container
       position: relative
       z-index: 1
@@ -32,6 +53,12 @@
       margin-bottom: 48px
       +f('dp400', 30, 40)
       color: #fff
+      +sm
+         max-width: 550px
+      +xs
+         margin-bottom: 20px
+         font-size: 20px
+         line-height: 28px
       &-currency
          +f('rob400')
    &__section-label
@@ -45,18 +72,25 @@
          left: -23%
          opacity: .5
          z-index: 1
+         filter: drop-shadow(0 0 120px rgba(107, 200, 248, 0.24))
       &_2
          top: -55%
          width: 120%
          height: 120%
          left: -23%
          opacity: 0.7
+         filter: drop-shadow(0 0 120px rgba(107, 200, 248, 0.24))
       &_3
          bottom: -55%
          left: -25%
          width: 80%
          height: 80%
          opacity: 0.35
+   &__btn
+      +xs
+         width: 270px
+         display: block
+         margin: 0 auto
    
 // end screen //
 
@@ -65,13 +99,24 @@
    position: relative
    padding: 70px 0 80px
    background-image: linear-gradient(-28deg, #5934a2 0%, #dc4a33 100%)
+   +xs
+      padding: 50px 0
+   &__section-label
+      transform: translate(-50%,-23%)
    &__section-title
       margin-bottom: 62px
+      +xs
+         margin-bottom: 30px
       .section-title__icon
          margin: 0 0 20px
+         +xs
+            margin: 0 0 -10px
    &__container
       position: relative
       z-index: 3
+   &__chart-wrap
+      +xs
+         overflow: auto
 // end quotations //
 
 // *** begin start *** //
@@ -79,19 +124,34 @@
    position: relative
    padding: 127px 0 110px
    background-color: #3b1eaa
+   overflow: hidden
+   +xs
+      padding: 60px 0
    &__container
       position: relative
       z-index: 3
    &__row
       justify-content: space-between
+      +sm
+         flex-direction: column
    &__col
       &:nth-child(1)
          flex: 0 1 42%
+         +md
+            flex: 1 1 42%
+         +sm
+            flex: 0 1 auto
+            margin-bottom: 80px
       &:nth-child(2)
          flex: 0 1 percentage(615 / 1200)
+         +sm
+            flex: 0 1 auto
    &__title
       margin-left: -7px
       margin-bottom: 50px
+      +xs
+         margin-left: 0
+         margin-bottom: 30px
    &__descr
       margin-bottom: 50px
       color: #fff
@@ -100,6 +160,8 @@
             margin-bottom: 30px
    &__user
       position: absolute
+      +xs
+         display: none
       &_1
          top: 0
          left: 33px
@@ -107,10 +169,25 @@
          left: 50%
          bottom: 0
          margin-left: -197px
+         
       &_3
          top: 32%
          right: -1.6%
-
+         +sm
+            top: 35%
+   &__decor-rect
+      position: absolute
+      top: -94%
+      left: -12%
+      z-index: 0
+      opacity: .6
+   &__section-label
+      transform: translate(-50%,-27%)
+   &__btn
+      +xs
+         display: block
+         width: 270px
+         margin: 0 auto
 // end start //
 
 // *** begin earn *** //
@@ -118,6 +195,8 @@
    position: relative
    padding: 105px 0 135px
    +cover
+   +xs
+      padding: 50px 0
    &::after
       +coverdiv
       background-color: rgba(#000, .75)
@@ -128,24 +207,54 @@
    &__row
       flex-wrap: nowrap
       justify-content: space-between
+      +sm
+         flex-direction: column
    &__col
       padding: 0 15px
       &:nth-child(1)
          flex: 0 1 51%
+         +sm
+            flex: 0 1  auto
+            margin-bottom: 40px
       &:nth-child(2)
          flex: 0 0 565px
          margin-right: -20px
+         +md
+            margin-right: 0
+         +sm
+            flex: 0 1 auto
+            max-width: 650px
+            margin: 0 auto
    &__title
       margin-left: -7px
       margin-bottom: 50px
+      opacity: 0
+      +xs
+         margin-left: 0
+         margin-bottom: 25px
    &__descr
       max-width: 485px
       margin-bottom: 48px
+      +sm
+         max-width: none
+      +xs
+         margin-bottom: 30px
       &-text
          &:not(:last-child)
             margin-bottom: 30px
+            +xs
+               margin-bottom: 15px
    &__stat
       margin-top: 18px
+      opacity: 0
+      transform: translateX(60px)
+      +xs
+         margin-top: 0
+   &__btn
+      +xs
+         display: block
+         width: 270px
+         margin: 0 auto
       
 // end earn //
 
@@ -154,6 +263,8 @@
    position: relative
    padding: 67px 0 84px
    +cover
+   +xs
+      padding: 50px 0
    &::after
       opacity: .95
       +coverdiv
@@ -164,11 +275,18 @@
       z-index: 1
    &__section-title
       margin-bottom: 55px
+      +xs
+         margin-bottom: 25px
    &__slider
+      +sm
+         max-width: 615px
+         margin: 0 auto
       .slick-list
          margin: 0 -15px
       .slider-dots
          margin-top: 40px
+         +xs
+            margin-top: 10px
       &-item
          padding: 15px
          color: #fff
@@ -177,16 +295,22 @@
             flex-direction: column
             justify-content: space-between
             min-height: 452px
+            height: 100%
             padding: 25px 30px 83px 40px
             box-shadow: 0 0 27px 1px rgba(226, 75, 46, 0.24)
             border-radius: 10px
             background-image: linear-gradient(-49deg, #e24b2e 0%, #e24b2e 100%)
+            +xs
+               padding: 15px
    &__item
       &:not(:last-child)
          margin-bottom: 30px
       &-title
          margin-bottom: 11px
          +f('dp500', 23, 40)
+         +xs
+            font-size: 21px
+            line-height: 30px
       &-descr
          font-size: 16px
          line-height: 23px
@@ -195,21 +319,52 @@
 
 // *** begin news *** //
 .news
+   position: relative
    padding: 85px 0 90px
    background-image: linear-gradient(-28deg, #3b1eaa 0%, #5934a2 100%)
+   overflow: hidden
+   +xs
+      padding: 50px 0 35px
+   &__decor-rect
+      position: absolute
+      z-index: 0
+      opacity: .4
+      &_1
+         top: -57%
+         left: -23.4%
+      &_2
+         bottom: -88%
+         right: -14%
+      &_3
+         bottom: -75%
+         right: 1%
    &__container
+      position: relative
+      z-index: 1
       max-width: 1200px
    &__section-title
       margin-bottom: 40px
+      +xs
+         margin-bottom: 25px
    &__slider
+      +md
+         padding: 0 50px
+      +xs
+         padding: 0
       .slick-list
          margin: 0 -15px
          padding: 15px 0
       .slider-btn
          &_prev
-            left: -70px
+            left: -80px
+            +md
+               left: 0
          &_next
-            right: -70px
+            right: -80px
+            +md
+               right: 0
+            svg
+               transform: scaleX(-1)
    &__item
       display: block
       margin: 0 15px
@@ -217,6 +372,8 @@
       transition: .3s ease-in-out
       &:hover
          transform: translateY(-10px)
+         +xs
+            transform: none
       &-img-wrap
          margin-bottom: 17px
          overflow: hidden
@@ -236,6 +393,11 @@
          padding-right: 30px
          font-size: 16px
          line-height: 22px
+         +md
+            padding-right: 20px
+         +xs
+            font-size: 15px
+            line-height: 20px
       &-date
          flex: 0 0 70px
          width: 70px
@@ -253,9 +415,14 @@
 .begin
    padding: 87px 0 0
    background-color: #3727a3
+   +xs
+      padding: 60px 0 0
    .section-title__text
       font-size: 50px
       line-height: 40px
+      +xs
+         font-size: 32px
+         line-height: 40px
    &__container
       max-width: 1200px
    
@@ -263,15 +430,39 @@
       &-text
          margin-bottom: 65px
          text-align: center
+         +xs
+            margin-bottom: 30px
       &-descr
          max-width: 650px
          margin: 34px auto 0
          +f('dp400', 23, 28)
          color: #fff
+         +xs
+            font-size: 18px
+            line-height: 24px
+            margin: 20px auto 0
+         br
+            +xs
+               display: none
    &__form
+      &-row
+         +xs
+            flex-direction: column
       &-field
          &:not(:last-child)
             margin-bottom: 25px
+            +xs
+               margin-bottom: 20px
+      &-col
+         &:nth-child(1)
+            opacity: 0
+            transform: translateX(-60px)
+         &:nth-child(2)
+            opacity: 0
+            transform: translateX(60px)
+         &:not(:last-child)
+            +xs
+               margin-bottom: 20px
       &-submit
    &__actions
       max-width: 1030px
@@ -281,4 +472,7 @@
          margin-bottom: 20px
          +f('dp400', 13, 28)
          color: #fff
+         +xs
+            line-height: 22px
+
 // end begin //

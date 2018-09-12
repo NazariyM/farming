@@ -4,12 +4,22 @@
    border-radius: 10px
    overflow: hidden
    background-color: rgba(#383838, .8)
+   padding-bottom: 60px
+   +sm
+      padding-bottom: 45px
+   +xs
+      min-width: 800px
    &__nav
       position: relative
       padding: 0 70px
       margin-bottom: 43px
       height: 65px
       background-color: #3e3e3e
+      +sm
+         padding: 0 40px
+      +xs
+         //min-width: 738px
+         //overflow: auto
       &-list
          display: flex
          height: 100%
@@ -19,6 +29,7 @@
             flex: 1
             transition: .3s ease-in-out
             cursor: pointer
+            +xs
             &.slick-active
                background-color: #552cf5
       &-btn
@@ -30,6 +41,8 @@
             margin-bottom: 5px
             +f('dp500', 20, 20)
             text-transform: uppercase
+            +sm
+               font-size: 18px
          &-descr
             +f('dp400', 13, 13)
    
@@ -42,10 +55,14 @@
             fill: #552cf5
          &_prev
             left: 20px
+            +sm
+               left: 5px
             svg
                transform: rotate(90deg)
          &_next
             right: 20px
+            +sm
+               right: 5px
             svg
                transform: rotate(-90deg)
                
@@ -59,7 +76,8 @@
             svg
                opacity: .5
    &__tabs
-      padding: 0 45px 60px
+      padding: 0 45px
+         padding: 0 15px 0 45px
       &-item
          height: 400px
          +gpu

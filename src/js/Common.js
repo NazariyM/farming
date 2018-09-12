@@ -4,6 +4,8 @@ import 'select2';
 import { $body, detectIE, $scrolledElements } from './_helpers';
 
 // import './components/Popups';
+import './components/preloader';
+import './components/Anims';
 import './components/Header';
 import './components/Sliders';
 import './components/Chart';
@@ -51,6 +53,7 @@ export class Common {
       const $maxVal = $input.data('max-value');
       const $defaultVal = $input.data('default-value');
       const $step = $input.data('step');
+
       // const $totalResult = $('.calc-block__result');
 
       $input.ionRangeSlider({
@@ -76,8 +79,7 @@ export class Common {
         //   this.value = this.value.replace(/^[0-9]{2,3}$/, '');
         // }
 
-        if (/\D/g.test(this.value))
-        {
+        if (/\D/g.test(this.value)) {
           this.value = this.value.replace(/\D/g, '');
         }
 

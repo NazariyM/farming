@@ -153,6 +153,17 @@ export class Resp {
    * @static
    * @return {Boolean}
    */
+  static get isTouches() {
+    return window.matchMedia('(max-width: 1023px)').matches;
+  }
+
+  /**
+   * Detect tablet device.
+   *
+   * @get
+   * @static
+   * @return {Boolean}
+   */
   static get isTablet() {
     return window.matchMedia('(min-width: 768px) and (max-width: 1279px)').matches;
   }
@@ -203,7 +214,9 @@ export const css = {
   error: 'has-error',
   noTransition: 'no-transition',
   menuActive: 'menu-active',
-  animsDisabled: 'anims-disabled'
+  animsDisabled: 'anims-disabled',
+  start: 'is-start',
+  end: 'is-end'
 };
 
 /**

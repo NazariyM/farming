@@ -4,6 +4,7 @@
       display: block
       
 .slider-btn
+   $parent: &
    position: absolute
    top: 50%
    z-index: 1
@@ -12,20 +13,28 @@
    justify-content: center
    width: 40px
    height: 105px
-   margin-top: -52px
+   margin-top: -98px
    transition: .3s ease-in-out
-   &:hover
+   &_prev
+      &:hover
+         transform: translateX(-10px)
+         +xs
+            transform: none
+   &_next
+      &:hover
+         transform: translateX(10px)
+         +xs
+            transform: none
    &.slick-disabled
       pointer-events: none
       opacity: .5
-   &_prev
-   &_next
-      svg
-         transform: scaleX(-1)
    svg
       fill: $white
       width: 40px
       height: 105px
+      +md
+         width: 25px
+         height: 85px
       
 .slider-dots
    +flexCenter

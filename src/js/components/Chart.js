@@ -22,8 +22,6 @@ class ChartBlock {
   }
 
   initTabs() {
-    const iconArr = svgIcon('arr-down');
-
     $(this.tabs).slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -43,7 +41,15 @@ class ChartBlock {
           <span class="chart__nav-btn-title">${$title}</span>
           <span class="chart__nav-btn-descr">${$descr}</span>
         </button>`;
-      }
+      },
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            swipe: false
+          }
+        }
+      ]
     });
   }
 
@@ -79,8 +85,6 @@ class ChartBlock {
       const areaGradient = ctx.createLinearGradient(0, 0, 0, 400);
       areaGradient.addColorStop(0, '#552cf3');
       areaGradient.addColorStop(1, 'transparent');
-
-      // background-image: linear-gradient(35deg, #4b32ae 0%, #e24b2e 99%, #e24b2e 100%)
 
       const chartInstance = new Chart(ctx, {
         type: 'line',
@@ -123,7 +127,6 @@ class ChartBlock {
               }
             },
           },
-          // responsive: true,
           maintainAspectRatio: false,
           elements: {
             line: {

@@ -16,7 +16,7 @@ block content
 			+e.IMG.section-label.section-label(src='img/labels/farming-label.svg' alt='image')
 			+e.container.container
 				+e.row.row
-					+e.col.col
+					+e.col.col(data-anim-stagger="fade-x")
 						+e.H2.title.title-lg Майнинг — это легко!
 						+e.P.descr С нами ты можешь заработать больше, чем можешь себе представить.
 							br
@@ -25,8 +25,9 @@ block content
 							| в рублях, начиная от 1 000
 							+e.SPAN.descr-currency ₽
 							| .
-						+btn('b', 'ХОЧУ КОНСУЛЬТАЦИЮ', '_orange js-scroll-to')
-					+e.col.col
+						+e.btn-wrap
+							+btn('b', 'ХОЧУ КОНСУЛЬТАЦИЮ', '_orange js-scroll-to')
+					+e.col.col(data-anim="fade-x")
 						+b.calc-block
 							+e.actions
 								+e.H4.title Рассчитай СВОЙ доход
@@ -89,76 +90,74 @@ block content
 		+b.SECTION.quotations
 			+b.section-label._text КОТИРОВКИ
 			+e.container.container
-				+b.section-title.quotations__section-title
+				+b.section-title.quotations__section-title(data-anim-stagger="fade-y")
 					+e.icon.icon-chart
 					+e.H3.text текущие котировки валют
+				+e.chart-wrap(data-anim="fade-y" data-anim-delay='0.8')
+					+b.chart
+						+e.nav
+							button.chart__nav-arr.chart__nav-arr_prev(type='button')
+								+i('arr-down')
+							button.chart__nav-arr.chart__nav-arr_next(type='button')
+								+i('arr-down')
 
-				+b.chart
-					+e.nav
-						button.chart__nav-arr.chart__nav-arr_prev(type='button')
-							+i('arr-down')
-						button.chart__nav-arr.chart__nav-arr_next(type='button')
-							+i('arr-down')
-
-					+e.tabs
-						+e.tabs-item
-							+e.tabs-item-data(data-title='BTC' data-descr='Bitcoin')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='ETH' data-descr='Ethereum')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='XRP' data-descr='Ripple')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='BTC' data-descr='Bitcoin')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='ETH' data-descr='Ethereum')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='XRP' data-descr='Ripple')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='BTC' data-descr='Bitcoin')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='ETH' data-descr='Ethereum')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='XRP' data-descr='Ripple')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='BTC' data-descr='Bitcoin')
-							+e.CANVAS.body
-						+e.tabs-item
-							+e.tabs-item-data(data-title='ETH' data-descr='Ethereum')
-							+e.CANVAS.body
-
-						//#chartjs-tooltip
-						//table
-
-					+e.label._y стоимость валюты
-					+e.label._x ВАЛЮТА
-						span USD
+						+e.tabs
+							+e.tabs-item
+								+e.tabs-item-data(data-title='BTC' data-descr='Bitcoin')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='ETH' data-descr='Ethereum')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='XRP' data-descr='Ripple')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='BTC' data-descr='Bitcoin')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='ETH' data-descr='Ethereum')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='XRP' data-descr='Ripple')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='BTC' data-descr='Bitcoin')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='ETH' data-descr='Ethereum')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='XRP' data-descr='Ripple')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='BTC' data-descr='Bitcoin')
+								+e.CANVAS.body
+							+e.tabs-item
+								+e.tabs-item-data(data-title='ETH' data-descr='Ethereum')
+								+e.CANVAS.body
+						+e.label._y стоимость валюты
+						+e.label._x ВАЛЮТА
+							span USD
 		//end quotations
 			
 		//begin start
 		+b.SECTION.start#start
+			+e.IMG.decor-rect(src='img/decor/rect_md.svg' alt='image')
 			+e.IMG.section-label.section-label(src='img/labels/start-label.svg' alt='image')
 			+e.user._1.icon-user_1
 			+e.user._2.icon-user_2
 			+e.user._3.icon-user_3
 			+e.container.container
 				+e.row.row
-					+e.col.col
+					+e.col.col(data-anim-stagger="fade-x")
 						+e.H2.title.title-lg Как начать майнить
 						+e.descr
 							+e.P.descr-text Облачный майнинг — процесс добычи киптовалюты с использованием удаленного центра обработки данных с общей вычислительной мощностью. Это позволяет пользователям майнить криптовалюту без огромных затрат на оборудование и электричество. Вы просто выбираете желаемую мощность и получаете доход.
 							+e.P.descr-text Каждые 24 часа или по завершению контракта вы будете получать добытую криптовалюту на свой электронный кошелёк соразмерно количеству арендованной мощности.
-						+btn('b', 'ХОЧУ КОНСУЛЬТАЦИЮ', '_orange js-scroll-to')
+						+e.btn-wrap
+							+btn('b', 'ХОЧУ КОНСУЛЬТАЦИЮ', '_orange js-scroll-to')
 
-					+b.steps.start__col.col
+					+b.steps.start__col.col(data-anim-stagger="fade-x")
 						-
 							stepsList = [
 							['doc', 'Мы заключаем с тобой официальный договор с гарантией доходности. Подписываем его, распиваем шампанское. Ты выбираешь, на какой срок и какую сумму ты готов вложить.'],
@@ -178,49 +177,52 @@ block content
 		+b.SECTION.earn#earn(style='background-image: url(img/bg/earn_bg.jpg)')
 			+e.container.container
 				+e.row.row
-					+e.col
+					+e.col(data-anim-stagger="fade-x")
 						+e.H2.title.title-lg._orange Как добываем валюту мы
 						+e.descr
 							+e.P.descr-text Облачный майнинг — процесс добычи киптовалюты с использованием удаленного центра обработки данных с общей вычислительной мощностью. Это позволяет пользователям майнить криптовалюту без огромных затрат на оборудование и электричество. Вы просто выбираете желаемую мощность и получаете доход.
 							+e.P.descr-text Каждые 24 часа или по завершению контракта вы будете получать добытую криптовалюту на свой электронный кошелёк соразмерно количеству арендованной мощности.
-						+btn('b', 'ХОЧУ КОНСУЛЬТАЦИЮ', '_orange js-scroll-to')
+						+e.btn-wrap
+							+btn('b', 'ХОЧУ КОНСУЛЬТАЦИЮ', '_orange js-scroll-to')
 					+e.col
-						+b.stat-block.earn__stat
-							+e.top
-								+e.H4.title реальная статистика
-								+e.P.descr Все данные представленные здесь являются реальными и берутся непосредственно с нашего оборудования из секретной серверной комнаты
-							+e.row
-								+e.item
-									+e.H6.item-title._hash Hashrate
-									+e.item-inner
-										+e.item-hash-count 300,7
-										+e.item-hash-text KH/s
-								+e.item
-									+e.H6.item-title._earn Заработано за 24 часа
-									+e.item-inner
-										+e.item-earn-count ₽
-											span 500000
-										+e.item-earn-text BTC 0,000234
-										+e.item-earn-text USD 25,99
-								+e.item
-									+e.H6.item-title._share Valid Shares
-									+e.item-inner
-										+e.item-share-count 146 (100%)
-										+e.item-share-text /
-										+e.item-share-text 0 (0%)
+						+b.stat-block.earn__stat(data-anim="fade-x")
+							+e.inner(data-anim-stagger="fade-x")
+								+e.top
+									+e.H4.title реальная статистика
+									+e.P.descr Все данные представленные здесь являются реальными и берутся непосредственно с нашего оборудования из секретной серверной комнаты
+								+e.row
+									+e.item
+										+e.H6.item-title._hash Hashrate
+										+e.item-inner
+											+e.item-hash-count 300,7
+											+e.item-hash-text KH/s
+									+e.item
+										+e.H6.item-title._earn Заработано за 24 часа
+										+e.item-inner
+											+e.item-earn-count ₽
+												span 500000
+											+e.item-earn-text BTC 0,000234
+											+e.item-earn-text USD 25,99
+									+e.item
+										+e.H6.item-title._share Valid Shares
+										+e.item-inner
+											+e.item-share-count 146 (100%)
+											+e.item-share-text /
+											+e.item-share-text 0 (0%)
 
-							+e.P.descr Все обрудование находится под надежным контролем и круглосуточным наблюдением.
-							+btn('b', 'ОБНОВИТЬ ДАННЫЕ', '_transparent stat-block__btn')
+								+e.P.descr._has-anim Все обрудование находится под надежным контролем и круглосуточным наблюдением.
+								+e.btn-wrap
+									+btn('b', 'ОБНОВИТЬ ДАННЫЕ', '_transparent stat-block__btn')
 		//end earn
 			
 		//begin partner
 		+b.SECTION.partner#partner(style='background-image: url(img/bg/partner_bg.jpg)')
 			+e.container.container
-				+b.section-title.partner__section-title
+				+b.section-title.partner__section-title(data-anim-stagger="fade-y")
 					+e.icon.icon-handshake
 					+e.H3.text хочешь стать нашим партнёром?
 
-				+e.slider.slider.js-partner-slider
+				+e.slider.slider.js-partner-slider(data-anim="fade-y" data-anim-delay='.5')
 					-i = 0
 					while i < 3
 						+e.slider-item
@@ -245,12 +247,15 @@ block content
 
 		//begin news
 		+b.SECTION.news
+			+e.IMG.decor-rect._1(src='img/decor/rect_sm.svg' alt='image')
+			+e.IMG.decor-rect._2(src='img/decor/rect_sm.svg' alt='image')
+			+e.IMG.decor-rect._3(src='img/decor/rect_sm.svg' alt='image')
 			+e.container.container
-				+b.section-title.news__section-title
+				+b.section-title.news__section-title(data-anim-stagger="fade-y")
 					+e.icon.icon-newspaper
 					+e.H3.text наши майнинг ньюз
 
-				+e.slider.slider.js-news-slider
+				+e.slider.slider.js-news-slider(data-anim="fade-y" data-anim-delay='.5')
 					-
 						newsList = [{
 						img: '1',
@@ -300,7 +305,7 @@ block content
 		//begin begin
 		+b.SECTION.begin.js-scroll-dest
 			+e.container.container
-				+e.top-text
+				+e.top-text(data-anim-stagger="fade-y")
 					+b.section-title.begin__section-title
 						+e.H3.text НАЧНИ МАЙНИТЬ УЖЕ СЕЙЧАС
 					+e.P.top-descr Связаться с нами очень просто, заполни форму
@@ -309,18 +314,19 @@ block content
 
 				+e.FORM.form(action='#!' method='POST')
 					+e.form-row.row
-						+e.form-col.col._md
+						+e.form-col.col._md(data-anim="fade-x" data-anim-delay='0.3')
 							+b.form-field.begin__form-field
 								+e.INPUT.input(type='text' name='' placeholder='Как тебя зовут?' required)
 							+b.form-field.begin__form-field
 								+e.INPUT.input(type='text' name='' placeholder='Твой номер телефона' required)
 							+b.form-field.begin__form-field
 								+e.INPUT.input(type='text' name='' placeholder='Есть e-mail?')
-						+e.form-col.col._md
+						+e.form-col.col._md(data-anim="fade-x" data-anim-delay='0.3')
 							+b.form-field.begin__form-field
 								+e.TEXTAREA.form-textarea.textarea(placeholder='Напиши, если есть какие-то вопросы')
-						+e.actions
-							+e.P.actions-agree Нажимая кнопку «Хочу майнить сейчас», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
+					+e.actions(data-anim-stagger="fade-y" data-anim-delay='0.6')
+						+e.P.actions-agree Нажимая кнопку «Хочу майнить сейчас», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных
+						+e.form-submit-wrap
 							+e.INPUT.form-submit.btn._orange._lg(type='submit' value='ХОЧУ МАЙНИТЬ сейчас')
 		//end begin
 

@@ -1,3 +1,32 @@
+// *** begin logo *** //
+.logo
+   position: relative
+   flex: 0 0 111px
+   width: 111px
+   &::before
+      position: absolute
+      top: -4px
+      right: 33px
+      width: 7px
+      height: 7px
+      background-color: #e24b2e
+      border-radius: 50%
+      content: ''
+   &__label
+      position: absolute
+      top: -25px
+      transform: scaleY(-1)
+      right: 16px
+      writing-mode: vertical-lr
+      +f('dp400', 16, 16)
+      color: #fff
+      text-transform: uppercase
+      transition: .3s ease-in-out
+   &__title
+      +hide-text
+   
+// end logo //
+
 // *** begin steps *** //
 .steps
    padding-top: 30px
@@ -8,6 +37,7 @@
       padding: 36px 16px 30px
       border-radius: 10px
       text-align: center
+      transform: translateX(60px)
       &:not(:last-child)
          margin-bottom: 94px
       &_1
@@ -32,6 +62,10 @@
          transform: translateY(-75%)
          +f('dp700')
          line-height: 40px
+         +xs
+            font-size: 220px!important
+            left: 50%
+            transform: translate(-50%, -75%)
          #{$parent}_1 &
             font-size: 208px
             color: #1f4ed1
@@ -93,17 +127,32 @@
    text-align: center
    border-radius: 10px
    border: 1px solid #ffffff
+   +xs
+      padding: 35px 15px
    &__top
+      transform: translateX(60px)
       margin-bottom: 40px
+      +xs
+         margin-bottom: 25px
    &__title
       margin-bottom: 26px
       +f('dp500', 30, 30)
       text-transform: uppercase
+      +xs
+         margin-bottom: 15px
    &__descr
       padding: 0 10px
+      +xs
+         padding: 0
+      &_has-anim
+         transform: translateX(60px)
    &__row
       display: flex
       margin: 0 -9px 50px
+      transform: translateX(60px)
+      +xs
+         flex-direction: column
+         margin: 0 0 30px
    &__item
       flex: 0 0 calc(33.33333% - 18px)
       width: calc(33.33333% - 18px)
@@ -112,6 +161,13 @@
       border-radius: 10px
       line-height: 30px
       overflow: hidden
+      +xs
+         flex: 0 1 auto
+         width: 100%
+         margin: 0
+      &:not(:last-child)
+         +xs
+            margin-bottom: 15px
       &-inner
          display: flex
          flex-direction: column
@@ -155,6 +211,8 @@
          &-text
             color: #363636
             font-size: 20px
-   &__btn
+   &__btn-wrap
       margin-top: 30px
+      transform: translateX(60px)
+   &__btn
 // end stat-block //
