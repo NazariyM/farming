@@ -1,9 +1,10 @@
 import objectFitImages from 'object-fit-images';
+import Popup from 'vintage-popup';
 import 'ion-rangeslider';
 import 'select2';
 import { $body, detectIE, $scrolledElements } from './_helpers';
 
-// import './components/Popups';
+import './components/Popups';
 import './components/preloader';
 import './components/Anims';
 import './components/Header';
@@ -20,8 +21,24 @@ export class Common {
     this.initRangeSliders();
     this.initCustomSelects();
     this.scrollToForm();
+    this.initThanksPop();
 
-    // this.addClassIE();
+    this.addClassIE();
+  }
+
+  initThanksPop() {
+    const $form = $('.js-form');
+
+    $form.on('submit', function (e) {
+      e.preventDefault();
+      const $this = $(this);
+
+      const thanskPopInstance = $('.thanks-popup__btn').popup();
+      thanskPopInstance.open();
+
+
+      $this[0].reset();
+    });
   }
 
   scrollToForm() {
@@ -54,8 +71,6 @@ export class Common {
       const $defaultVal = $input.data('default-value');
       const $step = $input.data('step');
 
-      // const $totalResult = $('.calc-block__result');
-
       $input.ionRangeSlider({
         grid: false,
         min: $minVal,
@@ -74,10 +89,6 @@ export class Common {
 
       $result.on('change keyup', function () {
         let val = $(this).prop('value');
-
-        // if (/^[0-9]{4,6}$/.test(this.value)) {
-        //   this.value = this.value.replace(/^[0-9]{2,3}$/, '');
-        // }
 
         if (/\D/g.test(this.value)) {
           this.value = this.value.replace(/\D/g, '');

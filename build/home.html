@@ -12,6 +12,7 @@
   <body>
     <div class="preloader">
       <div class="preloader__inner">
+        <div class="preloader__circle"></div>
         <div class="logo preloader__logo">
           <img class="logo__img" src="img/other/logo.png" alt="Farming" title="" />
         </div>
@@ -41,7 +42,7 @@
             </li>
           </ul>
         </nav>
-        <button class="header__btn btn btn_orange btn_sm header__btn" type="button">Обратный звонок</button>
+        <button class="header__btn btn btn_orange btn_sm header__btn js-scroll-to" type="button">Обратный звонок</button>
         <button class="header__nav-btn" type="button">
           <span class="header__nav-btn-burger">
             <span class="header__nav-btn-lines"></span>
@@ -54,9 +55,9 @@
     <main class="main">
       <!--begin screen-->
       <section class="screen" style="background-image: url(img/bg/screen_bg.png)">
-        <img class="screen__decor-rect screen__decor-rect_1" src="img/decor/rect_md.svg" alt="image" title="" />
-        <img class="screen__decor-rect screen__decor-rect_2" src="img/decor/rect_md.svg" alt="image" title="" />
-        <img class="screen__decor-rect screen__decor-rect_3" src="img/decor/rect_md.svg" alt="image" title="" />
+        <img class="screen__decor-rect screen__decor-rect_1" src="img/decor/rect_md-1.png" alt="image" title="" />
+        <img class="screen__decor-rect screen__decor-rect_2" src="img/decor/rect_md-2.png" alt="image" title="" />
+        <img class="screen__decor-rect screen__decor-rect_3" src="img/decor/rect_md-3.png" alt="image" title="" />
         <img class="screen__section-label section-label" src="img/labels/farming-label.svg" alt="image" title="" />
         <div class="screen__container container">
           <div class="screen__row row">
@@ -231,7 +232,7 @@
       <!--end quotations-->
       <!--begin start-->
       <section class="start" id="start">
-        <img class="start__decor-rect" src="img/decor/rect_md.svg" alt="image" title="" />
+        <img class="start__decor-rect" src="img/decor/start-rect.png" alt="image" title="" />
         <img class="start__section-label section-label" src="img/labels/start-label.svg" alt="image" title="" />
         <div class="start__user start__user_1 icon-user icon-user_1"></div>
         <div class="start__user start__user_2 icon-user icon-user_2"></div>
@@ -431,9 +432,9 @@
       <!--end partner-->
       <!--begin news-->
       <section class="news">
-        <img class="news__decor-rect news__decor-rect_1" src="img/decor/rect_sm.svg" alt="image" title="" />
-        <img class="news__decor-rect news__decor-rect_2" src="img/decor/rect_sm.svg" alt="image" title="" />
-        <img class="news__decor-rect news__decor-rect_3" src="img/decor/rect_sm.svg" alt="image" title="" />
+        <img class="news__decor-rect news__decor-rect_1" src="img/decor/rect_sm.png" alt="image" title="" />
+        <img class="news__decor-rect news__decor-rect_2" src="img/decor/rect_sm.png" alt="image" title="" />
+        <img class="news__decor-rect news__decor-rect_3" src="img/decor/rect_sm.png" alt="image" title="" />
         <div class="news__container container">
           <div class="section-title news__section-title" data-anim-stagger="fade-y">
             <div class="section-title__icon icon-newspaper"></div>
@@ -526,7 +527,7 @@
             <p class="begin__top-descr">Связаться с нами очень просто, заполни форму
               <br>и получи специальное предложение через несколько минут!</p>
           </div>
-          <form class="begin__form" action="#!" method="POST">
+          <form class="begin__form js-form" action="#!" method="POST">
             <div class="begin__form-row row">
               <div class="begin__form-col col col_md" data-anim="fade-x" data-anim-delay="0.3">
                 <div class="form-field begin__form-field">
@@ -561,7 +562,7 @@
     <!--begin footer-->
     <footer class="footer" id="contacts">
       <div class="footer__container container">
-        <img class="footer__decor-rect" src="img/decor/rect_lg.svg" alt="image" data-anim="fade-x" data-anim-duration="1" title="" />
+        <img class="footer__decor-rect" src="img/decor/rect_lg.png" alt="image" data-anim="fade-x" data-anim-duration="1" title="" />
         <div class="footer__row row" data-anim-stagger="fade-x">
           <div class="footer__col">
             <h5 class="footer__title">Контакты</h5>
@@ -601,12 +602,17 @@
       </div>
     </footer>
     <!--end footer-->
-    <div class="popup" data-popup-id="add-testimonial" tabindex="-1" role="dialog">
-      <div class="popup__container">
+    <div class="popup" data-popup-id="thanks-popup" tabindex="-1" role="dialog">
+      <div class="popup__container popup__container_xs">
         <div class="popup__close js-popup-close">
           <svg class="icon icon-close ">
             <use xlink:href="img/sprite.svg#icon-close"></use>
           </svg>
+        </div>
+        <div class="thanks-popup popup__inner">
+          <div class="thanks-popup__title">Спасибо!</div>
+          <p>Наш менеджер свяжется с Вами в ближайшее время</p>
+          <button class="thanks-popup__btn" data-popup-target="thanks-popup" type="button"></button>
         </div>
       </div>
     </div>

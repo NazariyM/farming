@@ -40,3 +40,64 @@
 		
 	&__logo
 		z-index: 2
+
+	&__circle
+		display: block
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 220px
+		height: 220px
+		margin: -110px 0 0 -110px
+		border-radius: 50%
+		border: 3px solid transparent
+		border-top-color: #e24b2e
+		-webkit-animation: spin 2s linear infinite
+		animation: spin 2s linear infinite
+		&:before
+			content: ""
+			position: absolute
+			top: 5px
+			left: 5px
+			right: 5px
+			bottom: 5px
+			border-radius: 50%
+			border: 3px solid transparent
+			border-top-color: #fff
+			-webkit-animation: spin 3s linear infinite
+			animation: spin 3s linear infinite
+		&:after
+			content: ""
+			position: absolute
+			top: 15px
+			left: 15px
+			right: 15px
+			bottom: 15px
+			border-radius: 50%
+			border: 3px solid transparent
+			border-top-color: #2959df
+			-webkit-animation: spin 1.5s linear infinite
+			animation: spin 1.5s linear infinite
+
+@-webkit-keyframes spin
+	0%
+		-webkit-transform: rotate(0deg)
+		-ms-transform: rotate(0deg)
+		transform: rotate(0deg)
+	
+	100%
+		-webkit-transform: rotate(360deg)
+		-ms-transform: rotate(360deg)
+		transform: rotate(360deg)
+
+
+@keyframes spin
+	0%
+		-webkit-transform: rotate(0deg)
+		-ms-transform: rotate(0deg)
+		transform: rotate(0deg)
+	
+	100%
+		-webkit-transform: rotate(360deg)
+		-ms-transform: rotate(360deg)
+		transform: rotate(360deg)

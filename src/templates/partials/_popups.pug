@@ -1,7 +1,11 @@
 mixin popup(el)
 	case el.name
 
-		when 'add-testimonial'
-			+b.popup(data-popup-id='add-testimonial', tabindex='-1', role='dialog')
-				+e.container
+		when 'thanks-popup'
+			+b.popup(data-popup-id='thanks-popup', tabindex='-1', role='dialog')
+				+e.container._xs
 					+e.close.js-popup-close: +i('close')
+					+b.thanks-popup.popup__inner
+						+e.title Спасибо!
+						+e.P Наш менеджер свяжется с Вами в ближайшее время
+						+e.BUTTON.btn(data-popup-target='thanks-popup' type='button')

@@ -10,9 +10,9 @@ block content
 
 		//begin screen
 		+b.SECTION.screen(style='background-image: url(img/bg/screen_bg.png)')
-			+e.IMG.decor-rect._1(src='img/decor/rect_md.svg' alt='image')
-			+e.IMG.decor-rect._2(src='img/decor/rect_md.svg' alt='image')
-			+e.IMG.decor-rect._3(src='img/decor/rect_md.svg' alt='image')
+			+e.IMG.decor-rect._1(src='img/decor/rect_md-1.png' alt='image')
+			+e.IMG.decor-rect._2(src='img/decor/rect_md-2.png' alt='image')
+			+e.IMG.decor-rect._3(src='img/decor/rect_md-3.png' alt='image')
 			+e.IMG.section-label.section-label(src='img/labels/farming-label.svg' alt='image')
 			+e.container.container
 				+e.row.row
@@ -142,7 +142,7 @@ block content
 			
 		//begin start
 		+b.SECTION.start#start
-			+e.IMG.decor-rect(src='img/decor/rect_md.svg' alt='image')
+			+e.IMG.decor-rect(src='img/decor/start-rect.png' alt='image')
 			+e.IMG.section-label.section-label(src='img/labels/start-label.svg' alt='image')
 			+e.user._1.icon-user_1
 			+e.user._2.icon-user_2
@@ -247,9 +247,9 @@ block content
 
 		//begin news
 		+b.SECTION.news
-			+e.IMG.decor-rect._1(src='img/decor/rect_sm.svg' alt='image')
-			+e.IMG.decor-rect._2(src='img/decor/rect_sm.svg' alt='image')
-			+e.IMG.decor-rect._3(src='img/decor/rect_sm.svg' alt='image')
+			+e.IMG.decor-rect._1(src='img/decor/rect_sm.png' alt='image')
+			+e.IMG.decor-rect._2(src='img/decor/rect_sm.png' alt='image')
+			+e.IMG.decor-rect._3(src='img/decor/rect_sm.png' alt='image')
 			+e.container.container
 				+b.section-title.news__section-title(data-anim-stagger="fade-y")
 					+e.icon.icon-newspaper
@@ -312,7 +312,7 @@ block content
 						br
 						| и получи специальное предложение через несколько минут!
 
-				+e.FORM.form(action='#!' method='POST')
+				+e.FORM.form.js-form(action='#!' method='POST')
 					+e.form-row.row
 						+e.form-col.col._md(data-anim="fade-x" data-anim-delay='0.3')
 							+b.form-field.begin__form-field

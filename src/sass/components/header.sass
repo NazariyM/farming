@@ -5,9 +5,11 @@
    left: 0
    z-index: 100
    width: 100%
-   padding: 40px 0 0
+   padding: 60px 0 0
    opacity: 0
    transform: translateY(-100%)
+   +xs
+      padding: 40px 0 0
    &__container
       display: flex
       justify-content: space-between
@@ -114,7 +116,6 @@
                   +f('gp500')
                   font-size: 16px
                &:hover
-                  color: #e24b2e
                   &::before
                      opacity: 1
    &__nav-btn

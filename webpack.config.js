@@ -72,7 +72,7 @@ function createConfig(env) {
             path.resolve(__dirname, 'node_modules'),
           ],
           options: {
-            presets: ['es2015'],
+            presets: ['es2015', 'stage-2'],
           },
         },
         {

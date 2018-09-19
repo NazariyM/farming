@@ -96,29 +96,19 @@
 
 // ranges
 .js-range
-   .irs-max, .irs-min, .irs-single, .irs-bar-edge
+   .irs-max, .irs-min, .irs-single
       display: none
-   .irs-slider
+   .irs-bar-edge
+      width: 20px
       height: 14px
-      width: 0
-      margin-left: -7px
-      top: auto
-      bottom: 8px
+      background-image: linear-gradient(to right,#3b1eaa 100%,#3600ff 100%)
       border: 0
-      box-shadow: none
-      background: 0
    .irs-line
       height: 14px
       border-radius: 7px
-      background-color: #e8e8e8
       border: 0
-      cursor: pointer
-      //width: calc(100% - 14px)
    .irs-bar
-      left: 0 !important
       height: 14px
       border-radius: 7px
       border: 0
       background-image: linear-gradient(to right, #3b1eaa 0%, #3600ff 100%)
-      transition: .3s ease-in-out
-      cursor: pointer

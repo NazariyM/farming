@@ -80,7 +80,7 @@ class ChartBlock {
       '350',
     ];
 
-    for (let chart of this.charts) {
+    for (const chart of this.charts) {
       const ctx = chart.getContext('2d');
       const areaGradient = ctx.createLinearGradient(0, 0, 0, 400);
       areaGradient.addColorStop(0, '#552cf3');
@@ -102,12 +102,14 @@ class ChartBlock {
         },
         options: {
           defaultFontFamily: Chart.defaults.global.defaultFontFamily = "'DINPro-Medium'",
+          defaultFontStyle: Chart.defaults.global.defaultFontStyle = "bold",
+          defaultFontSize	: Chart.defaults.global.defaultFontSize	 = 13,
           showAllTooltips: true,
           tooltips: {
             intersect: false,
             position: 'nearest',
-            xPadding: 12,
-            yPadding: 12,
+            xPadding: 13,
+            yPadding: 13,
             cornerRadius: 10,
             caretSize: 8,
             caretPadding: 0,
